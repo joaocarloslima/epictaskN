@@ -15,12 +15,12 @@ import java.util.UUID;
 public class Task {
 
     @Id
-    UUID id;
+    UUID id = UUID.randomUUID();
 
     @NotBlank
     String title;
 
-    @Size(min = 10)
+    @Size(min = 10, message = "descrição deve ter pelo menos 10 caracteres")
     String description;
 
     @Min(1)

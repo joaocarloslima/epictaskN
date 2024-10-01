@@ -11,5 +11,18 @@ services:
     volumes:
       - postgres-data:/var/lib/postgresql/data
 
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: epictaskn-rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: epictask
+      RABBITMQ_DEFAULT_PASS: epictask
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - rabbitmq-data:/var/lib/rabbitmq
+
 volumes:
-    postgres-data:
+  postgres-data:
+  rabbitmq-data:

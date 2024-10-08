@@ -13,7 +13,7 @@
 
 <h1 class="title">Nova tarefa</h1>
 
-<form action="/task" method="post" th:object="${task}">
+<form th:action="@{/task}" method="post" th:object="${task}">
 
     <div class="field">
         <label class="label" for="title">Título</label>

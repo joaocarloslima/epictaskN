@@ -1,7 +1,9 @@
 package br.com.fiap.epictaskn.task;
 
+import br.com.fiap.epictaskn.user.User;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
@@ -28,5 +30,8 @@ public class Task {
 
     @Min(0) @Max(100)
     int status;
+
+    @ManyToOne
+    User user;
 
 }
